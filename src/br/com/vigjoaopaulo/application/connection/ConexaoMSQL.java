@@ -15,15 +15,15 @@ public class ConexaoMSQL {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
 			// create the connection
-			String user = "root";
-			String password = "vertrigo";
-			String url = "jdbc:mysql://localhost:3306/db_fanaticos?autoReconnect=true&useSSL=false";
+			String USER = "root";
+			String PASSWORD = "vertrigo";
+			String BD = "db_fanaticos";
+			String URL = "jdbc:mysql://localhost:3306/"+BD+"?autoReconnect=true&useSSL=false";
 
 			try {
-				conn = DriverManager.getConnection(url, user, password);				
+				conn = DriverManager.getConnection(URL, USER, PASSWORD);				
 				if(conn != null) {
-					System.out.println("Connected to Database.");
-					conn.close();
+					//System.out.println("Connected to Database.");					
 				}
 				return conn;
 			
